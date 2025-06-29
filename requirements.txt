@@ -14,4 +14,9 @@ python-dotenv
 scikit-learn
 tqdm
 typer
+xgboost
+gradio
+streamlit
+pydantic
+fastapi
 -e .
