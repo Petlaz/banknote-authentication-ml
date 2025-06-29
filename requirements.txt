@@ -19,4 +19,6 @@ gradio
 streamlit
 pydantic
 fastapi
+joblib
+docker-compose
 -e .
