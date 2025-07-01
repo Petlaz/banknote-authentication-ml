@@ -32,3 +32,10 @@ def scale_features(X_train, X_test=None, scaler_path=MODELS_DIR / "scaler.pkl", 
         X_test_scaled = scaler.transform(X_test)
         return X_train_scaled, X_test_scaled
     return X_train_scaled
+
+### Goal of features.py:
+# Read the processed/cleaned dataset
+# Perform feature engineering (if any)
+# Save transformed features (optional)
+# Provide a load_features() function other scripts or notebooks can reuse
+
