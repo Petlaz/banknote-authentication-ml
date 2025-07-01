@@ -81,3 +81,6 @@ logger.success(f"Model training complete. Saved to {BEST_MODEL_PATH}")
 # Evaluate
 accuracy = voting_model.score(X_test_scaled, y_test)
 logger.info(f"Model accuracy on test set: {accuracy:.4f}")
+
+## You can run it to test the training function using this code block.
+# python -m banknote_auth.modeling.train
