@@ -6,7 +6,7 @@
 
 ML project to classify forged banknotes
 
-## Project Organization
+## Project Structure
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen

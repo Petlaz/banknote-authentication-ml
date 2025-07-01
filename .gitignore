@@ -184,3 +184,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+logs/prediction_log.csv
+__pycache__/
+*.pyc
+*.pkl
+# VS Code

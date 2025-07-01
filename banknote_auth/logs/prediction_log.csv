@@ -1,0 +1,19 @@
+from datetime import datetime
+import pandas as pd
+import os
+
+def log_prediction(features, prediction):
+    log_path = "logs/prediction_log.csv"
+    log_entry = {
+        "Timestamp": datetime.now().isoformat(),
+        "Variance": features[0][0],
+        "Skewness": features[0][1],
+        "Curtosis": features[0][2],
+        "Entropy": features[0][3],
+        "Prediction": prediction
+    }
+    df = pd.DataFrame([log_entry])
+    if os.path.exists(log_path):
+        df.to_csv(log_path, mode='a', header=False, index=False)
+    else:
+        df.to_csv(log_path, mode='w', header=True, index=False)
