@@ -58,7 +58,75 @@ A machine learning project to classify banknotes as genuine or forged using stat
 ```
 
 --------
-## Model Evaluation
+
+# Requirements
+
+- Python 3.8+
+- scikit-learn
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- joblib
+- (see `requirements.txt` for full list)
+
+# Model Details
+
+- **Algorithm:** Voting Classifier (ensemble of Random Forest, XGBoost), SVM, KNN
+- **Features Used:** Variance, Skewness, Kurtosis, Entropy of wavelet-transformed images
+- **Scaling:** StandardScaler
+- **Test Size:** 20%
+
+## Example Usage
+
+Predict a new banknote in Python:
+
+```python
+import joblib
+import numpy as np
+
+model = joblib.load("models/best_model.pkl")
+
+### Example features: [variance, skewness, kurtosis, entropy]
+sample = np.array([[2.3, 6.7, -1.2, 0.5]])
+
+### Scale the sample
+scaled_sample = scaler.transform(new_sample)
+
+### Predict class
+prediction = model.predict(scaled_sample)
+
+### Output result
+print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
+
+
+## Insights
+
+```markdown
+### Insights
+
+- The model achieves perfect accuracy on the test set, indicating strong separability in the data.
+- Feature scaling and ensemble methods contributed to robust performance.
+- The confusion matrix shows no misclassifications.
+
+
+## Model Metrics
+
+**Test Accuracy:** `1.00`
+
+**Classification Report:**
+```
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       135
+           1       1.00      1.00      1.00        91
+
+    accuracy                           1.00       226
+   macro avg       1.00      1.00      1.00       226
+weighted avg       1.00      1.00      1.00       226
+```
+
+## Visualizations
 
 Here’s the confusion matrix from the final model:
 
@@ -69,4 +137,109 @@ Accuracy and classification report are saved in:
 
 - [`reports/metrics/classification_report.json`](reports/metrics/classification_report.json)
 
+
+## Quickstart
+
+1. **Clone the repository**
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Train the model**
+   ```bash
+   python -m banknote_auth.modeling.train
+   ```
+4. **Prediction**
+   '''bash
+   python -m banknote_auth.modeling.prediction
+   '''
+5. **Generate evaluation report**
+   ```bash
+   python -m banknote_auth.reporting.generate_report
+   ```
+
+## Output Structure
+
+reports/
+├── figures/
+│   └── confusion_matrix.png
+├── metrics/
+│   ├── classification_report.json
+│   └── classification_report.txt
+```
+
+## Deployment
+You can deploy the interactive apps using either Gradio or Streamlit.
+
+Gradio App
+
+python app_gradio.py
+
+This will launch a local Gradio web interface for banknote authentication.
+
+Streamlit App
+
+streamlit run app_streamlit.py
+
+This will launch a local Streamlit dashboard for banknote authentication.
+
+This will launch a local Streamlit dashboard for banknote authentication.
+
+## Apps
+
+Gradio App
+
+File: app_gradio.py
+
+Launches a simple web interface for uploading features and getting predictions.
+
+Example screenshot:
+
+Gradio App Screenshot <!-- Add your screenshot if available -->
+
+Streamlit App
+
+File: app_streamlit.py
+
+Provides an interactive dashboard for exploring predictions and model metrics.
+
+Example screenshot:
+
+Streamlit App Screenshot <!-- Add your screenshot if available -->
+
+## Online Demo
+
+You can deploy these apps to Hugging Face Spaces (for Gradio) or Streamlit Community Cloud for free!
+
+## Data Source
+
+- [UCI ML Repository: Banknote Authentication Data Set](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+
+
+## Results
+
+- **Perfect classification** on the test set.
+- All code and reports are reproducible.
+- Visual and textual reports are automatically generated.
+
+## FAQ
+
+**Q: How do I add new data?**  
+A: Place new CSV files in `data/raw/` and update your data processing scripts.
+
+**Q: Can I use a different classifier?**  
+A: Yes! Modify `banknote_auth/modeling/models.py` to build and train other classifiers.
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+## Contact
+
+For questions, open an issue or contact [Peter Ugonna Obi](email:peter.obi96@yahoo.com).
+
+## License
+
+This project is licensed under the MIT License.
 
