@@ -80,20 +80,25 @@ import joblib
 import numpy as np
 
 model = joblib.load("models/best_model.pkl")
+
 Example features: [variance, skewness, kurtosis, entropy]
+
 sample = np.array([[2.3, 6.7, -1.2, 0.5]])
 
-# Scale the sample
+* Scale the sample
+
 scaled_sample = scaler.transform(new_sample)
 
 predict class
 prediction = model.predict(scaled_sample)
 
-# Output result
+## Output result
+
 print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
 
  
- ## Insights
+## Insights
+
 - The model achieves perfect accuracy on the test set, indicating strong separability in the data.
 - Feature scaling and ensemble methods contributed to robust performance.
 - The confusion matrix shows no misclassifications.
@@ -104,13 +109,19 @@ print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
 **Test Accuracy:** `1.00`
 
 **Classification Report:**
-                 precision    recall  f1-score   support
-             0       1.00      1.00      1.00       135
-             1       1.00      1.00      1.00        91
-      accuracy                           1.00       226
-     macro avg       1.00      1.00      1.00       226
-  weighted avg       1.00      1.00      1.00       226
 
+**Precision, Recall, F1-score:**  
+```
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       135
+           1       1.00      1.00      1.00        91
+
+    accuracy                           1.00       226
+   macro avg       1.00      1.00      1.00       226
+weighted avg       1.00      1.00      1.00       226
+```
+               
 
 ## Visualizations
 
@@ -145,25 +156,25 @@ Accuracy and classification report are saved in:
    ``'
 
 ## Deployment
+
 You can deploy the interactive apps using either Gradio or Streamlit.
 
-Gradio App
+1. **Gradio App**
 
 python app_gradio.py
 
 This will launch a local Gradio web interface for banknote authentication.
 
-Streamlit App
+2. **Streamlit App**
 
 streamlit run app_streamlit.py
 
 This will launch a local Streamlit dashboard for banknote authentication.
 
-This will launch a local Streamlit dashboard for banknote authentication.
 
 ## Apps
 
-Gradio App
+1. **Gradio App**
 
 File: app_gradio.py
 
@@ -173,7 +184,7 @@ Example screenshot:
 
 Gradio App Screenshot <!-- Add your screenshot if available -->
 
-Streamlit App
+2. **Streamlit App**
 
 File: app_streamlit.py
 
