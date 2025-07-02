@@ -57,10 +57,7 @@ A machine learning project to classify banknotes as genuine or forged using stat
     └── plots.py                <- Code to create visualizations
 ```
 
---------
-
-# Requirements
-
+## Requirements
 - Python 3.8+
 - scikit-learn
 - pandas
@@ -70,41 +67,33 @@ A machine learning project to classify banknotes as genuine or forged using stat
 - joblib
 - (see `requirements.txt` for full list)
 
-# Model Details
-
+## Model Details
 - **Algorithm:** Voting Classifier (ensemble of Random Forest, XGBoost), SVM, KNN
 - **Features Used:** Variance, Skewness, Kurtosis, Entropy of wavelet-transformed images
 - **Scaling:** StandardScaler
 - **Test Size:** 20%
 
-## Example Usage
-
+Example Usage
 Predict a new banknote in Python:
-
-```python
+python
 import joblib
 import numpy as np
 
 model = joblib.load("models/best_model.pkl")
-
-### Example features: [variance, skewness, kurtosis, entropy]
+Example features: [variance, skewness, kurtosis, entropy]
 sample = np.array([[2.3, 6.7, -1.2, 0.5]])
 
-### Scale the sample
+# Scale the sample
 scaled_sample = scaler.transform(new_sample)
 
-### Predict class
+#Predict class
 prediction = model.predict(scaled_sample)
 
-### Output result
+# Output result
 print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
 
-
-## Insights
-
-```markdown
-### Insights
-
+ 
+ ## Insights
 - The model achieves perfect accuracy on the test set, indicating strong separability in the data.
 - Feature scaling and ensemble methods contributed to robust performance.
 - The confusion matrix shows no misclassifications.
@@ -115,16 +104,12 @@ print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
 **Test Accuracy:** `1.00`
 
 **Classification Report:**
-```
-              precision    recall  f1-score   support
-
-           0       1.00      1.00      1.00       135
-           1       1.00      1.00      1.00        91
-
-    accuracy                           1.00       226
-   macro avg       1.00      1.00      1.00       226
-weighted avg       1.00      1.00      1.00       226
-```
+                 precision    recall  f1-score   support
+             0       1.00      1.00      1.00       135
+             1       1.00      1.00      1.00        91
+      accuracy                           1.00       226
+     macro avg       1.00      1.00      1.00       226
+  weighted avg       1.00      1.00      1.00       226
 
 ## Visualizations
 
@@ -207,9 +192,11 @@ Example screenshot:
 
 Streamlit App Screenshot <!-- Add your screenshot if available -->
 
-## Online Demo
+
+## Online Demo 
 
 You can deploy these apps to Hugging Face Spaces (for Gradio) or Streamlit Community Cloud for free!
+
 
 ## Data Source
 
@@ -234,7 +221,7 @@ A: Yes! Modify `banknote_auth/modeling/models.py` to build and train other class
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
----
+
 ## Contact
 
 For questions, open an issue or contact [Peter Ugonna Obi](email:peter.obi96@yahoo.com).
