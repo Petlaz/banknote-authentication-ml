@@ -1,10 +1,10 @@
-# Banknote Authentication
+# Banknote Authentication ML
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-ML project to classify forged banknotes
+A machine learning project to classify banknotes as genuine or forged using statistical features extracted from images.
 
 ## Project Structure
 
