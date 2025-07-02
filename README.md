@@ -58,4 +58,15 @@ ML project to classify forged banknotes
 ```
 
 --------
+## Model Evaluation
+
+Here’s the confusion matrix from the final model:
+
+![Confusion Matrix](reports/figures/confusion_matrix.png)
+
+Accuracy and classification report are saved in:
+- [`reports/metrics/classification_report.txt`](reports/metrics/classification_report.txt)
+
+- [`reports/metrics/classification_report.json`](reports/metrics/classification_report.json)
+
 

@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 from loguru import logger
 
+
 from banknote_auth.config import PROCESSED_DATA_DIR, MODELS_DIR
 
 def load_clean_data(filename="data_cleaned.csv") -> pd.DataFrame:
