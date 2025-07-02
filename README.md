@@ -86,7 +86,7 @@ sample = np.array([[2.3, 6.7, -1.2, 0.5]])
 # Scale the sample
 scaled_sample = scaler.transform(new_sample)
 
-#Predict class
+predict class
 prediction = model.predict(scaled_sample)
 
 # Output result
@@ -110,6 +110,7 @@ print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
       accuracy                           1.00       226
      macro avg       1.00      1.00      1.00       226
   weighted avg       1.00      1.00      1.00       226
+
 
 ## Visualizations
 
@@ -141,17 +142,7 @@ Accuracy and classification report are saved in:
 5. **Generate evaluation report**
    ```bash
    python -m banknote_auth.reporting.generate_report
-   ```
-
-## Output Structure
-
-reports/
-├── figures/
-│   └── confusion_matrix.png
-├── metrics/
-│   ├── classification_report.json
-│   └── classification_report.txt
-```
+   ``'
 
 ## Deployment
 You can deploy the interactive apps using either Gradio or Streamlit.
