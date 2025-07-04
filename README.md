@@ -129,6 +129,8 @@ Here’s the confusion matrix from the final model:
 
 [![Confusion Matrix](notebooks/reports/figures/confusion_matrix.png)](notebooks/reports/figures/confusion_matrix.png)
 
+[![ROC Curve](reports/figures/roc_curve.png)](notebooks/reports/figures/roc_curve.png)
+
 Accuracy and classification report are saved in:
 - [`reports/metrics/classification_report.txt`](reports/metrics/classification_report.txt)
 
