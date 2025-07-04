@@ -65,13 +65,21 @@ A machine learning project to classify banknotes as genuine or forged using stat
 ## Quickstarts
 
 1. **Clone the repository**
+
 2. **Install dependencies**
+
 pip install -r requirements.txt
+
 3. **Train the model**
+
 python -m banknote_auth.modeling.train
+
 4. **Generate report (accuracy, confusion matrix, etc.)**
+
 python -m banknote_auth.reporting.generate_report
+
 5. **Run prediction**
+
 python -m banknote_auth.modeling.predict
 
 
