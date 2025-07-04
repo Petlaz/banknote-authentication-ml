@@ -127,9 +127,8 @@ weighted avg       1.00      1.00      1.00       226
 
 Here’s the confusion matrix from the final model:
 
-[![Confusion Matrix](notebooks/reports/figures/confusion_matrix.png)](notebooks/reports/figures/confusion_matrix.png)
-
-[![ROC Curve](reports/figures/roc_curve.png)](notebooks/reports/figures/roc_curve.png)
+[![Confusion Matrix](reports/figures/confusion_matrix.png)](reports/figures/confusion_matrix.png)
+[![ROC Curve](reports/figures/roc_curve.png)](reports/figures/roc_curve.png)
 
 Accuracy and classification report are saved in:
 - [`reports/metrics/classification_report.txt`](reports/metrics/classification_report.txt)
