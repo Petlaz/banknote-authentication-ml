@@ -152,14 +152,19 @@ You can deploy this project on:
 ## Sample Prediction
 
 import joblib
+
 import numpy as np
 
 model = joblib.load("models/best_model.pkl")
+
 scaler = joblib.load("models/scaler.pkl")
 
 sample = np.array([[2.3, 6.7, -1.2, 0.5]])
+
 scaled = scaler.transform(sample)
+
 result = model.predict(scaled)
+
 print("Prediction:", "Authentic" if result[0] == 0 else "Forged")
 
 
