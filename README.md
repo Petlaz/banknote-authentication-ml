@@ -1,10 +1,15 @@
-# Banknote Authentication ML
+# Banknote Authentication with Machine Learning
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
 A machine learning project to classify banknotes as genuine or forged using statistical features extracted from images.
+
+## Data Source
+
+- [UCI ML Repository: Banknote Authentication Data Set](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+
 
 ## Project Structure
 
@@ -57,51 +62,45 @@ A machine learning project to classify banknotes as genuine or forged using stat
     └── plots.py                <- Code to create visualizations
 ```
 
-## Requirements
-- Python 3.8+
-- scikit-learn
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- joblib
-- (see `requirements.txt` for full list)
+## Quictstarts
+
+# 1. Clone the repository
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Train the model
+python -m banknote_auth.modeling.train
+
+# 4. Generate report (accuracy, confusion matrix, etc.)
+python -m banknote_auth.reporting.generate_report
+
+# 5. Run prediction
+python -m banknote_auth.modeling.predict
+
 
 ## Model Details
-- **Algorithm:** Voting Classifier (ensemble of Random Forest, XGBoost), SVM, KNN
-- **Features Used:** Variance, Skewness, Kurtosis, Entropy of wavelet-transformed images
-- **Scaling:** StandardScaler
-- **Test Size:** 20%
 
-Example Usage
-Predict a new banknote in Python:
-python
-import joblib
-import numpy as np
+* **Algorithm: VotingClassifier (ensemble of Random Forest, XGBoost, SVM, KNN)**
 
-model = joblib.load("models/best_model.pkl")
+* **Features Used: Variance, Skewness, Kurtosis, Entropy**
 
-Example features: [variance, skewness, kurtosis, entropy]
+* **Scaling: StandardScaler**
 
-sample = np.array([[2.3, 6.7, -1.2, 0.5]])
+* **Test Size: 20%**
 
-* Scale the sample
 
-scaled_sample = scaler.transform(new_sample)
+## Visualizations
 
-predict class
-prediction = model.predict(scaled_sample)
+Here’s the confusion matrix from the final model:
 
-## Output result
+![Confusion Matrix](reports/figures/confusion_matrix.png)
 
-print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
+[![ROC Curve](reports/figures/roc_curve.png)](reports/figures/roc_curve.png)
 
- 
-## Insights
+Accuracy and classification report are saved in:
+- [`reports/metrics/classification_report.txt`](reports/metrics/classification_report.txt)
 
-- The model achieves perfect accuracy on the test set, indicating strong separability in the data.
-- Feature scaling and ensemble methods contributed to robust performance.
-- The confusion matrix shows no misclassifications.
+- [`reports/metrics/classification_report.json`](reports/metrics/classification_report.json)
 
 
 ## Model Metrics
@@ -121,142 +120,75 @@ print("Prediction:", "Authentic" if prediction[0] == 0 else "Forged")
    macro avg       1.00      1.00      1.00       226
 weighted avg       1.00      1.00      1.00       226
 ```
-               
-
-## Visualizations
-
-Here’s the confusion matrix from the final model:
-
-![Confusion Matrix](reports/figures/confusion_matrix.png)
-
-[![ROC Curve](reports/figures/roc_curve.png)](reports/figures/roc_curve.png)
-
-Accuracy and classification report are saved in:
-- [`reports/metrics/classification_report.txt`](reports/metrics/classification_report.txt)
-
-- [`reports/metrics/classification_report.json`](reports/metrics/classification_report.json)
-
-
-## Quickstart
-
-1. **Clone the repository**
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Train the model**
-   ```bash
-   python -m banknote_auth.modeling.train
-   ```
-4. **Prediction**
-   '''bash
-   python -m banknote_auth.modeling.prediction
-   '''
-5. **Generate evaluation report**
-   ```bash
-   python -m banknote_auth.reporting.generate_report
-   ``'
 
 ## Deployment
 
-You can deploy the interactive apps using either Gradio or Streamlit.
-
-1. **Gradio App**
+- **Gradio App**
 
 python app_gradio.py
 
-This will launch a local Gradio web interface for banknote authentication.
+Launches a local Gradio web interface.
 
-2. **Streamlit App**
+- **Streamlit App**
 
 streamlit run app_streamlit.py
 
-This will launch a local Streamlit dashboard for banknote authentication.
+Launches a local Streamlit dashboard.
+
+- **Screenshot Demo**
+
+Add screenshots to reports/figures/ and reference them in README.md or docs/index.md
 
 
-## Apps
+## Online Demo
 
-1. **Gradio App**
+You can deploy this project on:
 
-File: app_gradio.py
+* **Hugging Face Spaces (for Gradio)**
 
-Launches a simple web interface for uploading features and getting predictions.
-
-Example screenshot:
-
-Gradio App Screenshot <!-- Add your screenshot if available -->
-
-2. **Streamlit App**
-
-File: app_streamlit.py
-
-Provides an interactive dashboard for exploring predictions and model metrics.
-
-Example screenshot:
-
-Streamlit App Screenshot <!-- Add your screenshot if available -->
+* **Streamlit Community Cloud**
 
 
-## Online Demo 
+## Sample Prediction
 
-You can deploy these apps to Hugging Face Spaces (for Gradio) or Streamlit Community Cloud for free!
+import joblib
+import numpy as np
 
+model = joblib.load("models/best_model.pkl")
+scaler = joblib.load("models/scaler.pkl")
 
-## Data Source
-
-- [UCI ML Repository: Banknote Authentication Data Set](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
-
-
-## Results
-
-The VotingClassifier achieved the best overall results:
-
-* F1 Score: 0.994
-
-* ROC AUC: 1.00
-
-* Recall: 1.00 (No false negatives)
-
-This ensemble model is robust, interpretable, and ready for deployment in real-world banknote authentication systems.
+sample = np.array([[2.3, 6.7, -1.2, 0.5]])
+scaled = scaler.transform(sample)
+result = model.predict(scaled)
+print("Prediction:", "Authentic" if result[0] == 0 else "Forged")
 
 
 ## References
 
-Books & Courses
+1. **UCI Banknote Dataset: https://archive.ics.uci.edu/ml/datasets/banknote+authentication**
 
-1. **Huyen, C. (2022). Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications. O'Reilly Media.
-A practical guide for building real-world machine learning systems with a focus on deployment and scalability.**
+2. **Hands-On ML with Scikit-Learn (A. Géron, O'Reilly)**
 
-2. **Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (2nd ed.). O'Reilly Media.
-A hands-on guide to building machine learning and deep learning systems using Python.**
+3. **Machine Learning Specialization (A. Ng, Coursera)**
 
-3- **Ng, A. (2022). Machine Learning Specialization. DeepLearning.AI / Stanford University on Coursera.
-A foundational program on machine learning theory and applications.**
-
-Tools & Libraries
-
-1. **Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
-https://scikit-learn.org**
-
-2. **Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.
-https://xgboost.ai**
-
-3. **Abid, A., et al. (2021). Gradio: Hassle-Free Sharing and Testing of ML Models.
+4. **Abid, A., et al. (2021) Gradio: Hassle-Free Sharing and Testing of ML Models
 https://gradio.app**
 
-4. **Streamlit Inc. (2021). Streamlit: The fastest way to build data apps.
+5. **Streamlit Inc. (2021). Streamlit: The fastest way to build data apps
 https://streamlit.io**
 
-5. **Van Rossum, G., & Drake, F. L. (2009). Python 3 Reference Manual. CreateSpace.
-https://www.python.org**
 
-## FAQ
 
-**Q: How do I add new data?**  
-A: Place new CSV files in `data/raw/` and update your data processing scripts.
+## Requirements
+- Python 3.8+
+- scikit-learn
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- joblib
+- (see `requirements.txt` for full list)
 
-**Q: Can I use a different classifier?**  
-A: Yes! Modify `banknote_auth/modeling/models.py` to build and train other classifiers.
 
 ## Contributing
 
@@ -264,10 +196,11 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 
 ## Contact
+ 
+ Peter Ugonna Obi – for questions, open an issue or reach out directly.
 
-For questions, open an issue or contact [Peter Ugonna Obi](email:peter.obi96@yahoo.com).
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License.
 
