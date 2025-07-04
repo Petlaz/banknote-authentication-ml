@@ -207,9 +207,15 @@ You can deploy these apps to Hugging Face Spaces (for Gradio) or Streamlit Commu
 
 ## Results
 
-- **Perfect classification** on the test set.
-- All code and reports are reproducible.
-- Visual and textual reports are automatically generated.
+The VotingClassifier achieved the best overall results:
+
+* F1 Score: 0.994
+
+* ROC AUC: 1.00
+
+* Recall: 1.00 (No false negatives)
+
+This ensemble model is robust, interpretable, and ready for deployment in real-world banknote authentication systems.
 
 ## FAQ
 

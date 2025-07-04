@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     # Save the trained model
     joblib.dump(model, MODELS_DIR / "voting_classifier.pkl")
-    print(f"✅ Model saved to {MODELS_DIR / 'voting_classifier.pkl'}")
+    print(f"Model saved to {MODELS_DIR / 'voting_classifier.pkl'}")
 
 ## You can run it to test the training function using this code block.
 # python -m banknote_auth.modeling.train
