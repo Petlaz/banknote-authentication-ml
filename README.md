@@ -217,6 +217,37 @@ The VotingClassifier achieved the best overall results:
 
 This ensemble model is robust, interpretable, and ready for deployment in real-world banknote authentication systems.
 
+
+## References
+
+Books & Courses
+
+1. **Huyen, C. (2022). Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications. O'Reilly Media.
+A practical guide for building real-world machine learning systems with a focus on deployment and scalability.**
+
+2. **Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (2nd ed.). O'Reilly Media.
+A hands-on guide to building machine learning and deep learning systems using Python.**
+
+3- **Ng, A. (2022). Machine Learning Specialization. DeepLearning.AI / Stanford University on Coursera.
+A foundational program on machine learning theory and applications.**
+
+Tools & Libraries
+
+1. **Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
+https://scikit-learn.org**
+
+2. **Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.
+https://xgboost.ai**
+
+3. **Abid, A., et al. (2021). Gradio: Hassle-Free Sharing and Testing of ML Models.
+https://gradio.app**
+
+4. **Streamlit Inc. (2021). Streamlit: The fastest way to build data apps.
+https://streamlit.io**
+
+5. **Van Rossum, G., & Drake, F. L. (2009). Python 3 Reference Manual. CreateSpace.
+https://www.python.org**
+
 ## FAQ
 
 **Q: How do I add new data?**  
