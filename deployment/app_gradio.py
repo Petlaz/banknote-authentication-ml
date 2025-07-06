@@ -2,11 +2,15 @@
 import gradio as gr
 import joblib
 import numpy as np
+from pathlib import Path
 
-# Load model and scaler
-model = joblib.load("models/best_model.pkl")
-scaler = joblib.load("models/scaler.pkl")
+#Smart path handling that works from both locations
+current_dir = Path(__file__).parent
+model_path = current_dir.parent/"models"/"best_model.pkl"  # Goes up one level
+scaler_path = current_dir.parent/"models"/"scaler.pkl"
 
+model = joblib.load(model_path)
+scaler = joblib.load(scaler_path)
 def predict(Variance_Wavelet, Skewness_Wavelet, Curtosis_Wavelet, Image_Entropy):
     features = np.array([[Variance_Wavelet, Skewness_Wavelet, Curtosis_Wavelet, Image_Entropy]])
     scaled = scaler.transform(features)

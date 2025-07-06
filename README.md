@@ -166,9 +166,9 @@ Launches a local Streamlit dashboard.
 
 ## Online Demo
 
-You can deploy this project on:
+1. **Hugging Face Spaces (for Gradio)**
 
-* **Hugging Face Spaces (for Gradio)**
+https://huggingface.co/spaces/petlaz/banknote-authentication
 
 * **Streamlit Community Cloud**
 
