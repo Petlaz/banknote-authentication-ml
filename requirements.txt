@@ -2,11 +2,10 @@
 scikit-learn==1.7.0
 xgboost==2.0.3
 joblib==1.4.2
+numpy==1.26.4
+pandas==2.3.0
 
-numpy>=2.0.0
-pandas>=2.2.0
-
-# Visualization (if needed)
+# Visualization
 matplotlib==3.8.4
 seaborn==0.13.2
 
@@ -16,8 +15,9 @@ streamlit==1.35.0
 
 # Logging and utility
 loguru==0.7.3
-# Testingpython-dotenv==1.1.1
-pandas==2.3.0
-scikit-learn==1.7.0
+python-dotenv==1.1.1
+
+# Testing
 pytest==8.4.1
 pillow==10.0.0
+
