@@ -5,7 +5,7 @@ colorFrom: yellow
 colorTo: red
 sdk: gradio
 sdk_version: 5.35.0
-app_file: app.py
+app_file: gradio_app.py
 pinned: false
 license: mit
 short_description: A machine learning project to classify banknote_auth
