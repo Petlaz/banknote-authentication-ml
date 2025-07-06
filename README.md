@@ -159,7 +159,7 @@ streamlit run app_streamlit.py
 
 Launches a local Streamlit dashboard.
 
-- **Screenshot Demo**
+- **Screenshot Demo for gradio app**
 
 ![Gradio Demo](reports/figures/gradio_screenshot.png)
 
