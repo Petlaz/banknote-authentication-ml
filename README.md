@@ -90,6 +90,10 @@ pytest tests/test_data.py
 
 pytest tests/test_train.py
 
+8. **How to run Gradio App**
+
+python deployment/app_gradio.py
+
 
 ## Model Details
 
@@ -150,7 +154,7 @@ Launches a local Streamlit dashboard.
 
 - **Screenshot Demo**
 
-Add screenshots to reports/figures/ and reference them in README.md or docs/index.md
+![Gradio Demo](reports/figures/gradio_screenshot.png)
 
 
 ## Online Demo
