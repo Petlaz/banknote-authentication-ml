@@ -20,4 +20,4 @@ loguru==0.7.3
 pandas==2.3.0
 scikit-learn==1.7.0
 pytest==8.4.1
-pillow==10.3.0
+pillow==10.0.0
