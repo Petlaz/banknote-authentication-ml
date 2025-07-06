@@ -1,3 +1,9 @@
+---
+title: banknote_authentication
+app_file: hf_space/gradio_app.py
+sdk: gradio
+sdk_version: 5.35.0
+---
 # Banknote Authentication with Machine Learning
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
