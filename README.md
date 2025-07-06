@@ -1,5 +1,5 @@
 ---
-<<<<<<< HEAD
+
 title: banknote_authentication
 app_file: hf_space/gradio_app.py
 sdk: gradio
@@ -233,7 +233,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 MIT License.
 
-=======
+
 title: Banknote Authentication
 emoji: 👁
 colorFrom: yellow
@@ -244,7 +244,5 @@ app_file: app.py
 pinned: false
 license: mit
 short_description: A machine learning project to classify banknote_auth
----
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
->>>>>>> 066195aafa0eebe75854217bdc1ff5994e45cfcc
+
