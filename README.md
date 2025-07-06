@@ -82,6 +82,14 @@ python -m banknote_auth.reporting.generate_report
 
 python -m banknote_auth.modeling.predict
 
+6. **To verify data pipeline like data loading, cleaning, and feature engineering functions.**
+
+pytest tests/test_data.py
+
+7. **To verify training and prediction pipeline.**
+
+pytest tests/test_train.py
+
 
 ## Model Details
 

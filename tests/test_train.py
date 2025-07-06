@@ -33,4 +33,4 @@ def test_model_has_predict_method(trained_model):
     model, _ = trained_model
     assert hasattr(model, "predict"), "Model missing predict() method"
 
-# To verify your training and prediction pipeline:  pytest tests/test_train.py
+# To verify training and prediction pipeline:  pytest tests/test_train.py
