@@ -149,7 +149,7 @@ weighted avg       1.00      1.00      1.00       226
 
 - **Gradio App**
 
-python app_gradio.py
+python deployment/app_gradio.py
 
 Launches a local Gradio web interface.
 
@@ -158,12 +158,6 @@ Launches a local Gradio web interface.
 streamlit run app_streamlit.py
 
 Launches a local Streamlit dashboard.
-
-- **Screenshot Demo for gradio app**
-
-![Gradio Demo](reports/figures/gradio_screenshot.png)
-
-**Screenshot Demo for streamtlit app**
 
 
 ## Online Demo
