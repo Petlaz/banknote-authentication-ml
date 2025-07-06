@@ -30,3 +30,9 @@ interface = gr.Interface(
 if __name__ == "__main__":
     interface.launch(share=True)
 
+# To run the Gradio app, execute: python deployment/app_gradio.py
+# Then open the provided link in your browser to interact with the model.
+# Make sure you have the model and scaler files in the "models" directory.
+# You can install the required packages using:
+# ```bash   
+# pip install -r requirements.txt

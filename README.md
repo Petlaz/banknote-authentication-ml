@@ -163,6 +163,8 @@ Launches a local Streamlit dashboard.
 
 ![Gradio Demo](reports/figures/gradio_screenshot.png)
 
+**Screenshot Demo for streamtlit app**
+
 
 ## Online Demo
 
