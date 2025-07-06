@@ -188,4 +188,5 @@ logs/prediction_log.csv
 __pycache__/
 *.pyc
 *.pkl
+logs/
 # VS Code

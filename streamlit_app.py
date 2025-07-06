@@ -1,4 +1,4 @@
-# deployment/app_streamlit.py
+# app_streamlit.py
 
 import streamlit as st
 import numpy as np
