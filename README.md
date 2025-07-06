@@ -87,7 +87,7 @@ python -m banknote_auth.modeling.predict
 
 * **Algorithm: VotingClassifier (ensemble of Random Forest, XGBoost, SVM, KNN)**
 
-* **Features Used: Variance, Skewness, Kurtosis, Entropy**
+* **Features Used: Variance, Skewness, Curtosis, Entropy**
 
 * **Scaling: StandardScaler**
 
