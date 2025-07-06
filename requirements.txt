@@ -18,3 +18,4 @@ loguru==0.7.3
 # Testingpython-dotenv==1.1.1
 pandas==2.3.0
 scikit-learn==1.7.0
+pytest==8.4.1
