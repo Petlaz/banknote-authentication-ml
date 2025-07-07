@@ -147,26 +147,47 @@ weighted avg       1.00      1.00      1.00       226
 
 ## Deployment
 
-- **Gradio App**
+🟢 Local Deployment
+
+1. **Gradio App (Local)**
 
 python deployment/app_gradio.py
 
-Launches a local Gradio web interface.
+Launches the Gradio web interface in your browser.
 
-- **Streamlit App**
+2. **Streamlit App (Local)**
 
-streamlit run app_streamlit.py
+streamlit run deployment/app_streamlit.py
 
-Launches a local Streamlit dashboard.
+Launches a Streamlit dashboard for prediction and logging.
 
+☁️ Cloud Deployment
 
-## Online Demo
+1. **Gradio on Hugging Face Spaces**
 
-1. **Hugging Face Spaces (for Gradio)**
+📍 Live Demo: https://huggingface.co/spaces/petlaz/banknote-authentication
 
-https://huggingface.co/spaces/petlaz/banknote-authentication
+Configured via app_file: deployment/app_gradio.py in README.md.
 
-* **Streamlit Community Cloud**
+2. **Streamlit on Streamlit Community Cloud**
+
+To deploy:
+
+Place deployment/app_streamlit.py in your repo root or set app_file = "deployment/app_streamlit.py" in Streamlit Cloud.
+
+Ensure requirements.txt includes:
+
+streamlit
+scikit-learn
+pandas
+numpy
+joblib
+pillow
+
+Push to GitHub and link to Streamlit Cloud: https://streamlit.io/cloud
+
+📍 (Add your link here once deployed)
+Example: https://banknote-authentication.streamlit.app
 
 
 ## Sample Prediction
