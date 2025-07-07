@@ -1,22 +1,13 @@
 ---
 title: banknote_authentication
-
 app_file: deployment/app_gradio.py
-
 sdk: gradio
-
 sdk_version: 5.35.0
-
 license: mit
-
 emoji: 👁
-
 colorFrom: yellow
-
 colorTo: red
-
 pinned: false
-
 short_description: A machine learning project to classify banknotes as genuine or forged.
 ---
 
