@@ -1,10 +1,25 @@
 ---
-
 title: banknote_authentication
-app_file: hf_space/gradio_app.py
+
+app_file: deployment/app_gradio.py
+
 sdk: gradio
+
 sdk_version: 5.35.0
+
+license: mit
+
+emoji: 👁
+
+colorFrom: yellow
+
+colorTo: red
+
+pinned: false
+
+short_description: A machine learning project to classify banknotes as genuine or forged.
 ---
+
 # Banknote Authentication with Machine Learning
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
@@ -12,6 +27,7 @@ sdk_version: 5.35.0
 </a>
 
 A machine learning project to classify banknotes as genuine or forged using statistical features extracted from images.
+
 
 ## Data Source
 
@@ -81,7 +97,7 @@ pip install -r requirements.txt
 
 python -m banknote_auth.modeling.train
 
-4. **Generate report (accuracy, confusion matrix, etc.)**
+4. **Generate report**
 
 python -m banknote_auth.reporting.generate_report
 
@@ -89,15 +105,11 @@ python -m banknote_auth.reporting.generate_report
 
 python -m banknote_auth.modeling.predict
 
-6. **To verify data pipeline like data loading, cleaning, and feature engineering functions.**
+6. **Run Test**
 
-pytest tests/test_data.py
+pytest tests/
 
-7. **To verify training and prediction pipeline.**
-
-pytest tests/test_train.py
-
-8. **How to run Gradio App**
+7. **Run Gradio App**
 
 python deployment/app_gradio.py
 
@@ -155,39 +167,11 @@ python deployment/app_gradio.py
 
 Launches the Gradio web interface in your browser.
 
-2. **Streamlit App (Local)**
-
-streamlit run deployment/app_streamlit.py
-
-Launches a Streamlit dashboard for prediction and logging.
-
 ☁️ Cloud Deployment
 
-1. **Gradio on Hugging Face Spaces**
+1. **Hugging Face Spaces**
 
 📍 Live Demo: https://huggingface.co/spaces/petlaz/banknote-authentication
-
-Configured via app_file: deployment/app_gradio.py in README.md.
-
-2. **Streamlit on Streamlit Community Cloud**
-
-To deploy:
-
-Place deployment/app_streamlit.py in your repo root or set app_file = "deployment/app_streamlit.py" in Streamlit Cloud.
-
-Ensure requirements.txt includes:
-
-streamlit
-scikit-learn
-pandas
-numpy
-joblib
-pillow
-
-Push to GitHub and link to Streamlit Cloud: https://streamlit.io/cloud
-
-📍 (Add your link here once deployed)
-Example: https://banknote-authentication.streamlit.app
 
 
 ## Sample Prediction
@@ -211,18 +195,13 @@ print("Prediction:", "Authentic" if result[0] == 0 else "Forged")
 
 ## References
 
-1. **UCI Banknote Dataset: https://archive.ics.uci.edu/ml/datasets/banknote+authentication**
+1. **UCI Banknote Dataset**
 
-2. **Hands-On ML with Scikit-Learn (A. Géron, O'Reilly)**
+2. **Géron, A. Hands-On Machine Learning with Scikit-Learn and TensorFlow**
 
-3. **Machine Learning Specialization (A. Ng, Coursera)**
+3. **Ng, A. Machine Learning Specialization, Coursera**
 
-4. **Abid, A., et al. (2021) Gradio: Hassle-Free Sharing and Testing of ML Models
-https://gradio.app**
-
-5. **Streamlit Inc. (2021). Streamlit: The fastest way to build data apps
-https://streamlit.io**
-
+4. **Gradio Documentation**
 
 
 ## Requirements
@@ -238,28 +217,14 @@ https://streamlit.io**
 
 ## Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
+Pull requests are welcome. Open an issue to suggest changes or improvements.
 
 ## Contact
  
- Peter Ugonna Obi – for questions, open an issue or reach out directly.
-
+ Peter Ugonna Obi
+ 
+ For questions, open an issue or reach out directly.
 
 ## License
 
 MIT License.
-
-
-title: Banknote Authentication
-emoji: 👁
-colorFrom: yellow
-colorTo: red
-sdk: gradio
-sdk_version: 5.35.0
-app_file: app.py
-pinned: false
-license: mit
-short_description: A machine learning project to classify banknote_auth
-
-
